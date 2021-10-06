@@ -60,7 +60,7 @@ const PaymentAgentList = (() => {
             const commonPaymentMethods = {
                 bank   : ['bank', 'banks', 'bankdeposit', 'banktransfer', 'bankwire', 'bankwiretransfer'],
                 crypto : ['crypto', 'cryptocurrencies', 'cryptocurrency'],
-                ewallet: ['ewallet', 'ewallets', 'ewalletpayment'],
+                ewallet: ['ewallet', 'ewallets', 'ewalletpayment', 'skrill'],
                 mixed  : ['mix', 'mixed'],
             };
             const normalizedBankName = bank.replace(/[' ',-]/g, '').toLowerCase();
