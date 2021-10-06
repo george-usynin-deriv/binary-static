@@ -12,7 +12,7 @@ const PaymentAgentList = (() => {
             BinaryPjax.load(`${Url.urlFor('user/set-currency')}`);
             return;
         }
-        
+
         $(() => {
             $('#accordion').accordion({
                 heightStyle: 'content',
@@ -56,11 +56,28 @@ const PaymentAgentList = (() => {
 
         const $accordion = $('<div/>', { id: 'accordion' });
 
+        const getNormalizedBankName = (bank) => {
+            const commonPaymentMethods = {
+                bank: ['bank', 'banks', 'bankdeposit', 'banktransfer', 'bankwire', 'bankwiretransfer'],
+                crypto: ['crypto', 'cryptocurrencies', 'cryptocurrency'],
+                ewallet: ['ewallet', 'ewallets', 'ewalletpayment'],
+                mixed: ['mix', 'mixed']
+            }
+            const normalizedBankName = bank.replace(/[' ',-]/g, '').toLowerCase()
+            for (let paymentMethod in commonPaymentMethods) {
+                if (commonPaymentMethods[paymentMethod].some(el => el === normalizedBankName)) {
+                    return paymentMethod
+                }
+            }
+            return normalizedBankName
+        }
+
         list.map((agent) => {
             let supported_banks = '';
             if (agent.supported_banks && agent.supported_banks.length > 0) {
                 const banks = agent.supported_banks.split(',');
                 banks.map((bank) => {
+                    bank = getNormalizedBankName(bank)
                     supported_banks += bank.length === 0 ?
                         '' :
                         `<img src="${Url.urlForStatic(`images/pages/payment_agent/banks/${bank.toLowerCase()}.png`)}" alt="${bank}" title="${bank}" />`;
