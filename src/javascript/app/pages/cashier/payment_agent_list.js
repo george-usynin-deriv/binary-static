@@ -59,7 +59,7 @@ const PaymentAgentList = (() => {
         const getNormalizedBankName = (bank) => {
             const commonPaymentMethods = {
                 bank   : ['bank', 'banks', 'bankdeposit', 'banktransfer', 'bankwire', 'bankwiretransfer'],
-                crypto : ['crypto', 'cryptocurrencies', 'cryptocurrency'],
+                crypto : ['crypto', 'cryptos', 'cryptocurrencies', 'cryptocurrency'],
                 ewallet: ['ewallet', 'ewallets', 'ewalletpayment', 'skrill'],
                 mixed  : ['mix', 'mixed'],
             };
