@@ -116,7 +116,7 @@ const BinaryLoader = (() => {
     const error_messages = {
         login                  : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
         only_virtual           : () => localize('This feature is available to demo accounts only.'),
-        only_real              : () => localize('This feature is not relevant to demo accounts.'),
+        only_real              : () => localize('You are using a demo account. Please switch to a real account or create one to access Cashier.'),
         not_authenticated      : () => localize('This page is only available to logged out clients.'),
         no_mf                  : () => localize('Binary options trading is not available in your Multipliers account.'),
         no_mf_switch_to_options: () => localize('Binary options trading is not available via your Multipliers account.<br/>Please switch back to your Options account.'),
@@ -126,11 +126,9 @@ const BinaryLoader = (() => {
         only_deriv             : () => localize('Unfortunately, this service isn’t available in your country. If you’d like to trade multipliers, try DTrader on Deriv.'),
     };
 
-    // This variable related to if else condition below
-
-    // const error_actions = {
-    //     only_deriv: () => ({ localized_title: localize('Go to DTrader'), target_url: 'https://app.deriv.com' }),
-    // };
+    const error_actions = {
+        only_deriv: () => ({ localized_title: localize('Go to DTrader'), target_url: 'https://app.deriv.com' }),
+    };
 
     const loadHandler = (this_page) => {
         const config = { ...pages_config[this_page] };
@@ -147,13 +145,9 @@ const BinaryLoader = (() => {
                             displayMessage(error_messages.only_virtual());
                         } else if (config.only_real && Client.get('is_virtual')) {
                             displayMessage(error_messages.only_real());
-                        } // eslint-disable-line
-                        // The if else condition below, blocked the usage of portfolio/profile/settings on french accounts
-
-                        // else if (response.authorize.country === 'fr') { // We don't offer service for France residence clients on Binary any more
-                        //     displayMessage(error_messages.only_deriv(), error_actions.only_deriv());
-                        // }
-                        else {
+                        } else if ((config.no_mf || config.only_virtual || window.location.href.includes('metatrader')) && ClientBase.get('residence') === 'fr') { // We don't offer service for France residence clients on Binary any more
+                            displayMessage(error_messages.only_deriv(), error_actions.only_deriv());
+                        } else {
                             loadActiveScript(config);
                         }
                     });
@@ -184,7 +178,9 @@ const BinaryLoader = (() => {
 
         BinarySocket.wait('authorize').then(() => {
             if (config.no_blocked_country && Client.isLoggedIn() && Client.isOptionsBlocked()) {
-                if (config.msg_residence_blocked) {
+                if (ClientBase.get('residence') === 'fr') {
+                    displayMessage(error_messages.only_deriv(), error_actions.only_deriv());
+                } else if (config.msg_residence_blocked) {
                     displayMessage(error_messages.residence_blocked());
                 } else {
                     displayMessage(error_messages.options_blocked());
