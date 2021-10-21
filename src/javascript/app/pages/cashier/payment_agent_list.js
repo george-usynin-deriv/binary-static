@@ -73,7 +73,9 @@ const PaymentAgentList = (() => {
             if (agent.supported_payment_methods && agent.supported_payment_methods.length > 0) {
                 agent.supported_payment_methods.map((item) => {
                     supported_banks +=
-                        `<img src="${Url.urlForStatic(`images/pages/payment_agent/banks/${item.payment_method.toLowerCase()}.png`)}" alt="${item.payment_method}" title="${item.payment_method}" />`;
+                        `<img 
+                        onError="this.style='display: none';"
+                        src="${Url.urlForStatic(`images/pages/payment_agent/banks/${item.payment_method.toLowerCase()}.png`)}" alt="${item.payment_method}" title="${item.payment_method}" />`;
                 });
             } else if (agent.supported_banks && agent.supported_banks.length > 0) {
                 // TODO: remove this block when support for multiple payment methods is released
@@ -81,7 +83,9 @@ const PaymentAgentList = (() => {
                 banks.map((bank) => {
                     const supported_bank = getNormalizedPaymentMethod(bank);
                     supported_banks +=
-                        `<img src="${Url.urlForStatic(`images/pages/payment_agent/banks/${supported_bank.toLowerCase()}.png`)}" alt="${supported_bank}" title="${supported_bank}" />`;
+                        `<img 
+                        onError="this.style='display: none';"
+                        src="${Url.urlForStatic(`images/pages/payment_agent/banks/${supported_bank.toLowerCase()}.png`)}" alt="${supported_bank}" title="${supported_bank}" />`;
                 });
             }
 
