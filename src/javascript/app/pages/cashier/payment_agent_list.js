@@ -56,16 +56,16 @@ const PaymentAgentList = (() => {
 
         const $accordion = $('<div/>', { id: 'accordion' });
 
-        const getNormalizedBankName = (bank) => {
-            const commonPaymentMethods = {
+        const getNormalizedPaymentMethod = (method) => {
+            const common_payment_methods = {
                 bank   : ['bank', 'banks', 'bankdeposit', 'banktransfer', 'bankwire', 'bankwiretransfer'],
                 crypto : ['crypto', 'cryptos', 'cryptocurrencies', 'cryptocurrency'],
                 ewallet: ['ewallet', 'ewallets', 'ewalletpayment', 'skrill'],
                 mixed  : ['mix', 'mixed'],
             };
-            const normalizedBankName = bank.replace(/[' ',-]/g, '').toLowerCase();
-            const paymentMethod = Object.entries(commonPaymentMethods).reduce((method, entry) => entry[1].some(el => el === normalizedBankName) ? entry[0] : method, '');
-            return paymentMethod || normalizedBankName;
+            const normalized_payment_method = method.replace(/[' ',-]/g, '').toLowerCase();
+            const payment_method = Object.entries(common_payment_methods).reduce((pay_method, [ key, value ]) => value.some(el => el === normalized_payment_method) ? key : pay_method, '');
+            return payment_method || normalized_payment_method;
         };
 
         list.map((agent) => {
@@ -79,10 +79,9 @@ const PaymentAgentList = (() => {
                 // TODO: remove this block when support for multiple payment methods is released
                 const banks = agent.supported_banks.split(',');
                 banks.map((bank) => {
-                    const supportedBank = getNormalizedBankName(bank);
-                    supported_banks += supportedBank.length === 0 ?
-                        '' :
-                        `<img src="${Url.urlForStatic(`images/pages/payment_agent/banks/${supportedBank.toLowerCase()}.png`)}" alt="${supportedBank}" title="${supportedBank}" />`;
+                    const supported_bank = getNormalizedPaymentMethod(bank);
+                    supported_banks +=
+                        `<img src="${Url.urlForStatic(`images/pages/payment_agent/banks/${supported_bank.toLowerCase()}.png`)}" alt="${supported_bank}" title="${supported_bank}" />`;
                 });
             }
 
