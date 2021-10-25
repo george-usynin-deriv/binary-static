@@ -72,10 +72,11 @@ const PaymentAgentList = (() => {
             let supported_banks = '';
             if (agent.supported_payment_methods && agent.supported_payment_methods.length > 0) {
                 agent.supported_payment_methods.map((item) => {
+                    const payment_method = getNormalizedPaymentMethod(item.payment_method);
                     supported_banks +=
                         `<img 
                         onError="this.style='display: none';"
-                        src="${Url.urlForStatic(`images/pages/payment_agent/banks/${item.payment_method.toLowerCase()}.png`)}" alt="${item.payment_method}" title="${item.payment_method}" />`;
+                        src="${Url.urlForStatic(`images/pages/payment_agent/banks/${payment_method.toLowerCase()}.png`)}" alt="${payment_method}" title="${payment_method}" />`;
                 });
             } else if (agent.supported_banks && agent.supported_banks.length > 0) {
                 // TODO: remove this block when support for multiple payment methods is released
