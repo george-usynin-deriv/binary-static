@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-11-30 00:39\n"
+"PO-Revision-Date: 2022-01-17 10:46\n"
 "Last-Translator: \n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -1541,7 +1541,7 @@ msgid "Any information given on these pages, and/or emails or newsletters sent b
 msgstr "Qualsiasi informazioni fornita su queste pagine e/o attraverso email o newsletter inviate dalla Società ad esse connesse non sono da intendersi come consiglio finanziario o di investimento. La Società non si riterrà in nessun modo responsabile a tal riguardo."
 
 msgid "Any information that the Agent has provided or will provide to the Company in relation to the Agent's financial position, domicile, or other matters is accurate and not misleading."
-msgstr "tutte le informazioni personali fornite alla Società dall'Agente circa situazione finanziaria, domicilio o altri aspetti sono accurate e non fuorvianti."
+msgstr "Tutte le informazioni personali fornite alla Società dall'Agente circa la propria situazione finanziaria, il domicilio o altri aspetti sono accurate e non fuorvianti."
 
 msgid "Any information which the client provides or have provided to the Company in respect of their financial position, domicile, or other matters is accurate and not misleading in any material respect."
 msgstr "Tutte le informazioni fornite alla Società dal cliente riguardanti la propria posizione finanziaria, il domicilio o altri ambiti sono accurate e non fuorvianti in ogni aspetto sostanziale."
@@ -2260,8 +2260,8 @@ msgstr "Programma per laureati di Binary.com"
 msgid "Binary.com in Numbers"
 msgstr "Binary.com in cifre"
 
-msgid "Binary.com is moving to Deriv on 30 November"
-msgstr "Il 30 novembre Binary.com si sposta su Deriv"
+msgid "Binary.com is moving to Deriv"
+msgstr "Binary.com si sposta su Deriv"
 
 msgid "Binary.com recommends 1.1.1.1"
 msgstr "Binary.com consiglia 1.1.1.1"
@@ -2783,7 +2783,7 @@ msgid "Click here to open a Real Account"
 msgstr "Clicca qui per aprire un conto reale"
 
 msgid "Click here to open an Options account"
-msgstr "Clicca qui per aprire un conto per le opzioni"
+msgstr "Clicca qui per aprire un conto per opzioni"
 
 msgid "Click here to retry"
 msgstr "Clicca qui per riprovare"
@@ -5876,7 +5876,7 @@ msgid "IB programme FAQ"
 msgstr "Programma IB FAQ"
 
 msgid "ID number"
-msgstr "Numero"
+msgstr "Numero identificativo"
 
 msgid "ID number is required for %1."
 msgstr "È necessario un numero identificativo per %1."
@@ -6424,8 +6424,8 @@ msgstr "Nell'UE, i prodotti finanziari sono offerti da Deriv Investments (Europe
 msgid "In the EU, financial products are offered by Deriv Investments (Europe) Limited, W Business Centre, Level 3, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
 msgstr "Nell'UE, i prodotti finanziari sono offerti da Deriv Investments (Europe) Limited, W Business Centre, terzo piano, Triq Dun Karm, Birkirkara, BKR 9033, Malta, regolamentata come appartenente alla Categoria 3 dei fornitori di servizi di investimento dalla Malta Financial Services Authority (%1licenza n. IS/70156%2)."
 
-msgid "In the UK, our clients trade through Deriv (MX) Ltd and Deriv Investments (Europe) Limited. In the Isle of Man, they trade through Deriv (MX) Ltd. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
-msgstr "Nel Regno Unito, i nostri clienti effettuano trading attraverso Deriv (MX) Ltd e Deriv Investments (Europe) Limited. Nell'Isola di Man attraverso Deriv (MX) Ltd. Nell'Unione Europea (fatta eccezione per il Regno Unito) attraverso Deriv (Europe) Limited e Deriv Investments (Europe) Limited. Nel resto del mondo attraverso Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd e Deriv (FX) Ltd."
+msgid "In the UK, our clients trade through Deriv Investments (Europe) Limited. In the European Union (except UK), they trade through Deriv (Europe) Limited and Deriv Investments (Europe) Limited. In the rest of the world, they trade through Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd and Deriv (FX) Ltd."
+msgstr "Nel Regno Unito, i nostri clienti effettuano trading attraverso Deriv Investments (Europe) Limited. Nell'Unione Europea (fatta eccezione per il Regno Unito) attraverso Deriv (Europe) Limited e Deriv Investments (Europe) Limited. Nel resto del mondo attraverso Deriv (SVG) LLC, Deriv (V) Ltd, Deriv (BVI) Ltd e Deriv (FX) Ltd."
 
 msgid "In the case of a Limit Order, the client acknowledges that the Company will endeavour to fill the Order at a level that is the same or better than the Limit the client has specified, subject to the availability of the Limit Price."
 msgstr "Nel caso di un Limit Order, il cliente riconosce che la Società si impegna ad aprire/chiudere un'operazione a un livello pari o superiore rispetto al limite specificato dal Cliente, in base alla disponibilità del Prezzo Limite."
@@ -7148,7 +7148,7 @@ msgid "Loading"
 msgstr "Caricamento"
 
 msgid "Loading..."
-msgstr "Caricamento..."
+msgstr "Caricamento in corso..."
 
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Raggiungibile in soli 10 minuti, la città-giardino intelligente della Malesia offre fantastici spazi verdi e strutture raffinate."
@@ -7259,7 +7259,7 @@ msgid "MT5 Financial"
 msgstr "MT5 Finanziario"
 
 msgid "MT5 Login:"
-msgstr "MT5 Login:"
+msgstr "Login MT5:"
 
 msgid "MT5 Real Account"
 msgstr "Conto reale MT5"
@@ -13865,7 +13865,7 @@ msgid "Verify your identity"
 msgstr "Verifica l'identità"
 
 msgid "Version 52. Last modified 26-11-2021."
-msgstr "Versione 52. Ultima modifica: 2021-11-26."
+msgstr "Versione 52. Ultima modifica: 26-11-2021."
 
 msgid "Video Room Facility"
 msgstr "Sala video"
