@@ -65,8 +65,8 @@ const DepositWithdrawButtonCryptocurrencies = ({ is_cryptocurrencies_method }) =
                 </div>
                 <div className='gr-adapt client_real client_virtual invisible'>
                     <Button
-                        className={classNames('toggle button client_real client_virtual invisible', {
-                            'withdraw_btn_cashier': !!is_cryptocurrencies_method,
+                        className={classNames('toggle button client_real client_virtual invisible withdraw_btn_cashier', {
+                            'pa_withdraw': !is_cryptocurrencies_method,
                         })}
                         id={is_cryptocurrencies_method ? 'crypto_withdraw_link' : 'payment_agent_withdraw_link'}
                         href={is_cryptocurrencies_method ? it.url_for('/cashier/forwardws?action=withdraw') : it.url_for('/paymentagent/withdrawws')}

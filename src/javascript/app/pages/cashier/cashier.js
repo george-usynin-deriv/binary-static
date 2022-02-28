@@ -200,6 +200,9 @@ const Cashier = (() => {
                 item.selectors.forEach(selector => setBtnDisable(selector));
             }
         });
+        if (status.includes('only_pa_withdrawals_allowed')){
+            $('.pa_withdraw').removeClass('button-disabled').click(false);
+        }
     };
 
     const checkStatusIsLocked = ({ status }) => {
